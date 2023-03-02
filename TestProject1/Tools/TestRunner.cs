@@ -5,16 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+
+
 
 namespace TestProject1.Tools
 {
     public abstract class TestRunner
     {
         protected IWebDriver driver;
-        protected string URL { get => "https://todoist.com/auth/login"; }
-
-        protected string email = "bahdan510@gmail.com";
-        protected string password = "SchoolLviv22";
+        protected string URL { get; set; }
+        protected string Email { get; set; }
+        protected string Password { get; set; }
+        protected string InvalidEmail { get; set; }
+        protected string InvalidPassword { get; set; }
 
         [SetUp]
         public void BeforeEachMethod()
@@ -22,7 +27,19 @@ namespace TestProject1.Tools
             driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             driver.Manage().Window.Maximize();
+                        
+
+            IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: false).Build();
+            URL = config.GetValue<string>("url") ?? string.Empty;
+            
             driver.Navigate().GoToUrl(URL);
+
+            Email = config.GetValue<string>("email") ?? string.Empty;
+            Password = config.GetValue<string>("password") ?? string.Empty;
+            InvalidEmail = config.GetValue<string>("invalid_email") ?? string.Empty;
+            InvalidPassword = config.GetValue<string>("invalid_password") ?? string.Empty;
+
+
         }
 
         [TearDown]

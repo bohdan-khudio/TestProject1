@@ -23,7 +23,7 @@ namespace TestProject1.Tests
         [Test]
         public void LoginWithValidData()
         {
-            MainPage mainPage = new LoginPage(driver).SuccessfullLogin(email, password);
+            MainPage mainPage = new LoginPage(driver).SuccessfullLogin(Email, Password);
 
             Assert.AreEqual(EXPECTED_SETTINGS_TEXT, mainPage.GetSettingText());
             
@@ -42,7 +42,7 @@ namespace TestProject1.Tests
         {
             string ResetPasswordButtonText =  new LoginPage(driver)
                                                   .ClickForgotPasswordButton()
-                                                  .ResetPassword(email)
+                                                  .ResetPassword(Email)
                                                   .GetResetPasswordButtonText();
 
             Assert.AreEqual(EXPECTED_RESET_BUTTON_TEXT, ResetPasswordButtonText);
@@ -54,7 +54,7 @@ namespace TestProject1.Tests
         {
             string SingUpButtonText = new LoginPage(driver)
                                       .ClickSingUpButton()
-                                      .CreateAccount(email, password)
+                                      .CreateAccount(Email, Password)
                                       .GetSingUpButtonText();
 
             Assert.AreEqual(EXPECTED_SING_UP_BUTTON_TEXT, SingUpButtonText);
