@@ -5,10 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TestProject1.Pages;
 using TestProject1.Tools;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
+using Allure.Commons;
 
 namespace TestProject1.Tests
 {
     [TestFixture]
+    [Category("Login")]
+    [AllureNUnit]
     public class LoginTest : TestRunner
     {             
 
@@ -20,6 +25,9 @@ namespace TestProject1.Tests
 
         private const string EXPECTED_SING_UP_BUTTON_TEXT = "Sign up with Email";
 
+        [AllureTag("Login")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void LoginWithValidData()
         {
@@ -29,6 +37,9 @@ namespace TestProject1.Tests
             
         }
 
+        [AllureTag("Login")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void LoginWithInvalidData()
         {
@@ -37,6 +48,9 @@ namespace TestProject1.Tests
             Assert.AreEqual(EXPECTED_WARNING_LOGIN, loginMessagePage.GetAlertMessageText());
         }
 
+        [AllureTag("Login")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void ForgotPassword()
         {
@@ -49,6 +63,9 @@ namespace TestProject1.Tests
 
         }
 
+        [AllureTag("Login")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void CreateAccount()
         {

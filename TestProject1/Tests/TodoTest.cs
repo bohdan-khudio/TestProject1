@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Allure.Commons;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +12,8 @@ using TestProject1.Tools;
 namespace TestProject1.Tests
 {
     [TestFixture]
+    [Category("ToDo")]
+    [AllureNUnit]
     public class TodoTest : TestRunner
     {
         private const string EXPECTED_ALERT_TEXT_ADD = "Task added to Inbox";
@@ -17,6 +22,9 @@ namespace TestProject1.Tests
         private const string EXPECTED_PROJECT_NAME = "Test project";
         private const string EXPECTED_ALERT_TEXT_MOVE = "Task moved to Home";
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void AddTask()
         {
@@ -29,6 +37,9 @@ namespace TestProject1.Tests
             Assert.AreEqual(EXPECTED_ALERT_TEXT_ADD, mainPage.GetSuccessAlertText());
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void DeleteTask()
         {
@@ -40,6 +51,9 @@ namespace TestProject1.Tests
 
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void EditTask()
         {
@@ -52,6 +66,9 @@ namespace TestProject1.Tests
             Assert.AreEqual(EXPECTED_TASK_NAME, taskPage.GetTaskNameFildText());
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void CompleteTask()
         {
@@ -63,6 +80,9 @@ namespace TestProject1.Tests
             Assert.AreEqual(EXPECTED_COMPLETE_ALERT_TEXT, taskPage.GetCompleteAlertText());
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void SortByDueDate()
         {
@@ -74,6 +94,9 @@ namespace TestProject1.Tests
 
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void SortByPriority()
         {
@@ -84,6 +107,9 @@ namespace TestProject1.Tests
                 .SelectPriorityOption();
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void CreateProgect()
         {
@@ -97,6 +123,9 @@ namespace TestProject1.Tests
 
         }
 
+        [AllureTag("ToDo")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureOwner("Khudo Bohdan")]
         [Test]
         public void MoveTask()
         {
