@@ -28,7 +28,7 @@ namespace TestProject1.Tests
         [AllureTag("Login")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(1)]
         public void LoginWithValidData()
         {
             MainPage mainPage = new LoginPage(driver).SuccessfullLogin(Email, Password);
@@ -40,7 +40,7 @@ namespace TestProject1.Tests
         [AllureTag("Login")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(2)]
         public void LoginWithInvalidData()
         {
             LoginMessagePage loginMessagePage = new LoginPage(driver).UnsuccessfullLogin("invalid@email.com", "invalidPassword");
@@ -51,7 +51,7 @@ namespace TestProject1.Tests
         [AllureTag("Login")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, , Order(3)]
         public void ForgotPassword()
         {
             string ResetPasswordButtonText =  new LoginPage(driver)
@@ -66,7 +66,7 @@ namespace TestProject1.Tests
         [AllureTag("Login")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(4)]
         public void CreateAccount()
         {
             string SingUpButtonText = new LoginPage(driver)

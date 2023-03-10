@@ -25,7 +25,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(1)]
         public void AddTask()
         {
             MainPage mainPage = new LoginPage(driver)
@@ -40,7 +40,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(8)]
         public void DeleteTask()
         {
             new LoginPage(driver)
@@ -54,7 +54,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(2)]
         public void EditTask()
         {
             TaskPage taskPage = new LoginPage(driver)
@@ -69,7 +69,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(3)]
         public void CompleteTask()
         {
             TaskPage taskPage = new LoginPage(driver)
@@ -83,7 +83,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(4)]
         public void SortByDueDate()
         {
             new LoginPage(driver)
@@ -97,7 +97,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(5)]
         public void SortByPriority()
         {
             new LoginPage(driver)
@@ -110,7 +110,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(6)]
         public void CreateProgect()
         {
             ProjectPage projectPage = new LoginPage(driver)
@@ -126,7 +126,7 @@ namespace TestProject1.Tests
         [AllureTag("ToDo")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test]
+        [Test, Order(7)]
         public void MoveTask()
         {
             MainPage mainPage = new LoginPage(driver)
