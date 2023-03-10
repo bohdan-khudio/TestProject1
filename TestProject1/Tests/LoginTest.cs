@@ -51,7 +51,7 @@ namespace TestProject1.Tests
         [AllureTag("Login")]
         [AllureSeverity(SeverityLevel.normal)]
         [AllureOwner("Khudo Bohdan")]
-        [Test, , Order(3)]
+        [Test, Order(3)]
         public void ForgotPassword()
         {
             string ResetPasswordButtonText =  new LoginPage(driver)
